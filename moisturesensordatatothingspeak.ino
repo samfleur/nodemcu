@@ -3,12 +3,12 @@
 #include <Wire.h>
  
 String apiKey = ""; // Enter your Write API key from ThingSpeak
-const char *ssid = "";     // replace with your wifi ssid and wpa2 key
+const char *ssid = "";
 const char *pass = "";
 const char *server = "api.thingspeak.com";
 
-const int AirValue = 710;   //you need to replace this value with Value_1
-const int WaterValue = 300;  //you need to replace this value with Value_2
+const int AirValue = 710;   //air value sensor
+const int WaterValue = 300;  //water value sensor
 const int SensorPin = A0;
 int soilMoistureValue = 0;
 int soilmoisturepercent=0;
@@ -31,7 +31,7 @@ void setup() {
 
 void loop() 
 {  
-  soilMoistureValue = analogRead(SensorPin);  //put Sensor insert into soil
+  soilMoistureValue = analogRead(SensorPin);
   Serial.println(soilMoistureValue);
   
   soilmoisturepercent = map(soilMoistureValue, AirValue, WaterValue, 0, 100);
