@@ -5,7 +5,7 @@
 String apiKey = ""; // Enter your Write API key from ThingSpeak
 const char *ssid = "";     // replace with your wifi ssid and wpa2 key
 const char *pass = "";
-const char* server = "api.thingspeak.com";
+const char *server = "api.thingspeak.com";
 
 const int AirValue = 710;   //you need to replace this value with Value_1
 const int WaterValue = 300;  //you need to replace this value with Value_2
@@ -14,8 +14,7 @@ int soilMoistureValue = 0;
 int soilmoisturepercent=0;
  
 WiFiClient client;
- 
- 
+
 void setup() {
   Serial.begin(115200); // open serial port, set the baud rate to 9600 bps 
   WiFi.begin(ssid, pass);
@@ -29,8 +28,7 @@ void setup() {
     Serial.println("WiFi connected");
     delay(4000);
 }  
- 
- 
+
 void loop() 
 {  
   soilMoistureValue = analogRead(SensorPin);  //put Sensor insert into soil
@@ -53,7 +51,6 @@ else if(soilmoisturepercent <0)
   soilmoisturepercent = 0;
   delay(1800000);
 }
- 
  
 else if(soilmoisturepercent >=0 && soilmoisturepercent <= 100)
 {
